@@ -19,7 +19,7 @@ angular.module('foodController', [])
 		$scope.createFood = function() {
 
 			// validate the formData to make sure that something is there
-			// if form is empty, nothing will happen
+			// if name or price is empty, nothing will happen
 			if ($scope.formData.text != undefined && $scope.formData.price != undefined) {
 				$scope.loading = true;
 
@@ -47,7 +47,9 @@ angular.module('foodController', [])
 					$scope.foods = data; // assign our new list of todos
 				});
 		};
-
+        
+        // total Price ==================================================================
+		// return the total price of all food
 		$scope.totalPrice = function() {
 			$scope.loading = true;
 

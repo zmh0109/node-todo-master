@@ -22,6 +22,7 @@ module.exports = function (app) {
         // use mongoose to get all todos in the database
         getFood(res);
     });
+    
     // get total price of food
     app.get('/api/total', function (req, res) {
         // use mongoose to get all total price of food in the database
@@ -32,10 +33,10 @@ module.exports = function (app) {
                 res.send(err);
             }
             var total = 0;
-            for(i = 0; i < food.length; i++){
+            for(i = 0; i < food.length; i++){  // sum up all prices
                    total += food[i].price;
             }
-            res.json(total); // return all todos in JSON format
+            res.json(total); // return total price in JSON format
         });
             
     });

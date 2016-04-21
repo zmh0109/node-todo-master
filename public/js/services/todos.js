@@ -13,6 +13,7 @@ angular.module('foodService', [])
 			delete : function(id) {
 				return $http.delete('/api/food/' + id);
 			},
+			// service to get total rice
 			getTotalPrice : function() {
 				return $http.get('/api/total');
 			},
